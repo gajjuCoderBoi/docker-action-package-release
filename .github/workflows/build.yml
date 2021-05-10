@@ -30,7 +30,7 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: build/libs/invoicify.jar
-          asset_name: invoicify
+          asset_name: invoicify.jar
           tag: ${{ github.ref }}
           overwrite: true
           body: "invoicify.jar"
