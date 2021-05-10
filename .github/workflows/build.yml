@@ -31,7 +31,7 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: build/libs/invoicify.jar
           asset_name: invoicify.jar
-          tag: ${{ github.ref }}
+          tag: 'Releases'
           overwrite: true
           body: "invoicify.jar"
 
@@ -47,6 +47,5 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-#          registry: docker.pkg.github.com
           repository: ghazanfar9131/docker-action-package-release
           tag_with_sha: true
