@@ -7,6 +7,7 @@ plugins {
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
+jar.archiveName('invocifiy.jar')
 
 repositories {
     mavenCentral()
@@ -19,4 +20,8 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+bootJar{
+    archiveFileName = "invoicify.jar"
 }
