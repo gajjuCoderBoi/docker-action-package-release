@@ -33,7 +33,7 @@ jobs:
           asset_name: invoicify
           tag: ${{ github.ref }}
           overwrite: true
-          body: "invoicify"
+          body: "invoicify.jar"
 
   Build-and-Push-Docker-Image:
     runs-on: ubuntu-latest
