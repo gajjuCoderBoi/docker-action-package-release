@@ -12,7 +12,7 @@ on:
 
 jobs:
   build:
-    name: Build, Test and Release
+    name: Build, Test and Release Binary
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -29,7 +29,7 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: build/libs/invoicify.jar
+          file: target/invoicify.jar
           asset_name: invoicify.jar
           tag: 'Releases'
           overwrite: true
