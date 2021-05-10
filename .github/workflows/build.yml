@@ -33,7 +33,7 @@ jobs:
           asset_name: invoicify.jar
           tag: 'Releases'
           overwrite: true
-          body: "invoicify.jar"
+          body: "invoicify-v1.jar"
 
   Build-and-Push-Docker-Image:
     runs-on: ubuntu-latest
