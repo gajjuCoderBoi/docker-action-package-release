@@ -2,4 +2,4 @@
 
 [![Coverage](.github/badges/jacoco.svg)](https://github.com/gajjuCoderBoi/docker-action-package-release/actions/workflows/build.yml)
 
-[![build](https://github.com/gajjuCoderBoi/docker-action-package-release/blob/main/.github/workflows/build.yml/badge.svg)]
+[![Build, Test and Push](https://github.com/gajjuCoderBoi/docker-action-package-release/actions/workflows/build.yml/badge.svg)](https://github.com/gajjuCoderBoi/docker-action-package-release/actions/workflows/build.yml)
