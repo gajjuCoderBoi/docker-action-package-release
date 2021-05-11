@@ -2,12 +2,13 @@ plugins {
     id 'org.springframework.boot' version '2.4.5'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
+    id 'jacoco'
 }
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
-jar.destinationDir
+sourceCompatibility = '8'
+
 
 repositories {
     mavenCentral()
@@ -20,9 +21,28 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+task copyConfig(type: Copy) {
+    from file("${projectDir}/conf.yml")
+    into file("${buildDir}/resources/main")
+    rename 'conf.yml', 'application-dev.yml'
 }
 
 bootJar{
+    dependsOn copyConfig
     archiveFileName = "invoicify.jar"
     destinationDirectory = file("$projectDir/target")
+}
+jacoco {
+    toolVersion = "0.8.6"
+}
+jacocoTestReport {
+    reports {
+        dependsOn test
+        csv.enabled true
+        csv.destination layout.buildDirectory.dir('reports/jacocoCsv.csv').get().asFile
+
+    }
 }

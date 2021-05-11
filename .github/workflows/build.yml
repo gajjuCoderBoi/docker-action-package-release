@@ -1,7 +1,4 @@
-# This workflow will build a Java project with Gradle
-# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-gradle
-
-name: Build and Test and Push
+name: Build, Test and Push
 
 on:
   push:
@@ -25,6 +22,13 @@ jobs:
         run: chmod +x gradlew
       - name: Build with Gradle
         run: ./gradlew build
+      - name: Run Test Coverage
+        run: ./gradlew jacocoTestReport
+      - name: Generate JaCoCo Badge
+        uses: cicirello/jacoco-badge-generator@v2
+        with:
+          generate-branches-badge: true
+          jacoco-csv-file: build/reports/jacocoCsv.csv
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         with:
