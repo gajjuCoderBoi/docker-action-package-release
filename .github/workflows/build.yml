@@ -24,11 +24,12 @@ jobs:
         run: ./gradlew build
       - name: Run Test Coverage
         run: ./gradlew jacocoTestReport
-      - name: Generate JaCoCo Badge
-        uses: cicirello/jacoco-badge-generator@v2
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
         with:
-          generate-branches-badge: true
-          jacoco-csv-file: build/reports/jacocoCsv.csv
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./jacocoXml.xml
+          directory: ./build/jacoco/reports/
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         with:
