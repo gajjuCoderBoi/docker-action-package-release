@@ -35,7 +35,7 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: target/invoicify.jar
           asset_name: invoicify.jar
-          tag: 'Releases'
+          tag: ${{ github.ref }}
           overwrite: true
           body: "invoicify-v1.jar"
 
