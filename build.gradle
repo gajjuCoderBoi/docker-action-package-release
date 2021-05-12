@@ -44,8 +44,8 @@ jacocoTestReport {
 
         xml.enabled true
         csv.enabled true
-        csv.destination layout.buildDirectory.dir('reports/jacocoCsv.csv').get().asFile
-        xml.destination layout.buildDirectory.dir('reports/jacocoXml.xml').get().asFile
+        csv.destination layout.buildDirectory.dir('coverage/reports/jacocoCsv.csv').get().asFile
+        xml.destination layout.buildDirectory.dir('coverage/reports/jacocoXml.xml').get().asFile
 
     }
 }
