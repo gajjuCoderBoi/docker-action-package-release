@@ -28,7 +28,7 @@ jobs:
         uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          directory: ./build/jacoco/reports/
+          directory: ./build/reports/jacoco/
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         with:
